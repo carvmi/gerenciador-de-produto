@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciador de Produtos - Escola da Nuvem</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Gerenciador de Produtos</h1>
+    
+    <div class="form-section">
+      <h2>Cadastrar Novo Produto</h2>
+      <div class="form-group">
+        <input type="text" id="produtoId" placeholder="ID do Produto">
+      </div>
+      <div class="form-group">
+        <input type="text" id="produtoNome" placeholder="Nome do Produto">
+      </div>
+      <div class="form-group">
+        <input type="number" id="produtoPreco" placeholder="Preço" step="0.01">
+      </div>
+      <div class="form-group">
+        <input type="number" id="produtoQuantidade" placeholder="Quantidade">
+      </div>
+      <button onclick="cadastrarProduto()">Cadastrar</button>
+    </div>
+
+    <div class="search-container">
+      <input type="text" id="searchId" placeholder="Digite o ID do produto">
+      <button onclick="buscarProduto()">Buscar</button>
+      <button onclick="carregarProdutos()">Mostrar Todos</button>
+    </div>
+
+    <h2>Produtos Cadastrados</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="produtos-lista"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal Overlay -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal">
+      <h2 id="modal-title"></h2>
+      <div class="modal-body"></div>
+      <div class="modal-actions">
+        <button id="modal-confirm-btn">Confirmar</button>
+        <button id="modal-cancel-btn">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    Desenvolvido por Escola da Nuvem &amp; Milena Carvalho
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
